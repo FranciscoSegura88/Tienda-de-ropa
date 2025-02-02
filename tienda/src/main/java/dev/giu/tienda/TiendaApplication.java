@@ -1,4 +1,4 @@
-package com.tienda.tienda;
+package dev.giu.tienda;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
