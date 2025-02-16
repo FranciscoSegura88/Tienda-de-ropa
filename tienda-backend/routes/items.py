@@ -17,6 +17,6 @@ async def obtener_items_por_genero(genero: str):
 
 @router.post("/ropa")
 async def agregar_ropa(item: Item):
-    nuevo_item = item.dict()
+    nuevo_item = item.model_dump()
     resultado = await db["items"].insert_one(nuevo_item)
     return {"id": str(resultado.inserted_id)}
