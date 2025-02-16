@@ -16,17 +16,7 @@ async def obtener_items_por_genero(genero: str):
     return items
 
 @router.post("/ropa")
-async def agregar_ropa(nombre: str, precio: float, genero: str, talla: str, imagen: UploadFile = File(...)):
-    contenido = await imagen.read()
-    imagen_base64 = base64.b64encode(contenido).decode("utf-8")
-
-    nuevo_item = {
-        "nombre": nombre,
-        "precio": precio,
-        "genero": genero,
-        "talla": talla,
-        "imagen": imagen_base64
-    }
-
-    resultado = await db["ropa"].insert_one(nuevo_item)
+async def agregar_ropa(item: Item):
+    nuevo_item = item.dict()
+    resultado = await db["items"].insert_one(nuevo_item)
     return {"id": str(resultado.inserted_id)}

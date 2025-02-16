@@ -13,4 +13,4 @@ class Item(BaseModel):
     price: float
     is_offer: bool = None 
     genero: Genero = None
-    imagen: Optional[str]
+    imagen_url: Optional[str]
