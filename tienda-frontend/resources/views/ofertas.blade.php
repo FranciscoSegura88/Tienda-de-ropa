@@ -139,7 +139,7 @@
         <!-- Video de presentación -->
         <div class="fullscreen-video">
             <video loop autoplay muted controlsList="nodownload nofullscreen" disablePictureInPicture>
-                <source src="../video-and-imagen/No copyright shopping clothes  Free stock videos  Royalty free  Creative commons  Shopping mall - Stock Videos-Copyright Free (720p, h264).mp4" type="video/mp4">
+                <source src="../video-and-imagen/Choosing Clothes Stock Video - Motion Array (720p, h264).mp4" type="video/mp4">
                 Tu navegador no soporta la etiqueta de video.
             </video>
         </div>

@@ -47,17 +47,45 @@
             text-decoration: underline;
         }
 
+        /* Estilos para el subheader */
+        .subheader {
+            background-color: #444;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .subheader nav ol {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 20px;
+        }
+
+        .subheader nav ol li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .subheader nav ol li a:hover {
+            text-decoration: underline;
+        }
+
         /* Estilos para el video de fondo */
         .fullscreen-video {
-            position: relative; /* Cambia a relative para que no se superponga al contenido */
-            width: 100%; /* Ocupa el 100% del ancho */
-            height: auto; /* Altura automática para mantener la proporción */
+            position: relative;
+            width: 100%;
+            height: auto;
             overflow: hidden;
         }
 
         .fullscreen-video video {
-            width: 100%; /* El video ocupa el 100% del ancho */
-            height: auto; /* Altura automática para mantener la proporción */
+            width: 100%;
+            height: auto;
         }
 
         /* Tarjetas de productos */
@@ -135,11 +163,21 @@
         </nav>
     </header>
 
+    <div class="subheader">
+        <nav>
+            <ol>
+                <li><a href="accesorios.html">Accesorios</a></li>
+                <li><a href="calzado.html">Calzado</a></li>
+                <li><a href="ropa.html">Ropa</a></li>
+            </ol>
+        </nav>
+    </div>
+
     <main>
         <!-- Video de presentación -->
         <div class="fullscreen-video">
             <video loop autoplay muted controlsList="nodownload nofullscreen" disablePictureInPicture>
-                <source src="../video-and-imagen/No copyright shopping clothes  Free stock videos  Royalty free  Creative commons  Shopping mall - Stock Videos-Copyright Free (720p, h264).mp4" type="video/mp4">
+                <source src="../video-and-imagen/No copyright man wearing clothes  Man closing shirt buttons  Free stock footage  Creative commons - Stock Videos-Copyright Free (720p, h264).mp4" type="video/mp4">
                 Tu navegador no soporta la etiqueta de video.
             </video>
         </div>
