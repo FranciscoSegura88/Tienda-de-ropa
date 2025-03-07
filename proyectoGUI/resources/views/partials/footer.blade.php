@@ -4,11 +4,10 @@
           <div>
               <h3 class="text-lg font-semibold mb-4">Enlaces Rápidos</h3>
               <ul class="space-y-2">
-                  <li><a href="../views/trend.blade.php" class="hover:text-gray-400">Trend</a></li>
-                  <li><a href="../views/hombre.blade.php" class="hover:text-gray-400">Hombre</a></li>
-                  <li><a href="../views/mujer.blade.php" class="hover:text-gray-400">Mujer</a></li>
-                  <li><a href="../views/niños.blade.php" class="hover:text-gray-400">Niños</a></li>
-                  <li><a href="../views/ofertas.blade.php" class="hover:text-gray-400">Ofertas</a></li>
+                  <li><a href="{{ route('men') }}" class="hover:text-gray-400">Hombre</a></li>
+                  <li><a href="{{ route('women') }}" class="hover:text-gray-400">Mujer</a></li>
+                  <li><a href="{{ route('kids') }}" class="hover:text-gray-400">Niños</a></li>
+                  <li><a href="{{ route('offers') }}" class="hover:text-gray-400">Ofertas</a></li>
               </ul>
           </div>
 
