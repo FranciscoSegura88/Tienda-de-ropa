@@ -1,16 +1,16 @@
 <header class="bg-white shadow-md">
     <div class="container mx-auto flex items-center justify-between p-4">
         <!-- Logo -->
-        <a href="{{ route('trend') }}">
+        <a href="{{ route('main') }}">
           <img src="logo.svg" alt="Icono" class="h-30 w-auto">
         </a>
-
+        <!--Header-->
         <nav class="hidden md:flex space-x-6">
             <ol class="flex space-x-6">
-                <li><a href="{{ route('men') }}" class="text-gray-700 hover:text-gray-900 font-medium">Hombre</a></li>
-                <li><a href="{{ route('women') }}" class="text-gray-700 hover:text-gray-900 font-medium">Mujer</a></li>
-                <li><a href="{{ route('kids') }}" class="text-gray-700 hover:text-gray-900 font-medium">Niños</a></li>
-                <li><a href="{{ route('offers') }}" class="text-gray-700 hover:text-gray-900 font-medium">Ofertas</a></li>
+                <li><a id="btn_hombre" class="text-gray-700 hover:text-gray-900 font-medium">Hombre</a></button></li>
+                <li><a id="btn_mujer" class="text-gray-700 hover:text-gray-900 font-medium">Mujer</a></li>
+                <li><a id="btn_ninos" class="text-gray-700 hover:text-gray-900 font-medium">Niños</a></li>
+                <li><a id="btn_ofertas" class="text-gray-700 hover:text-gray-900 font-medium">Ofertas</a></li>
             </ol>
         </nav>
 
@@ -23,10 +23,10 @@
 
     <div id="mobile-menu" class="hidden md:hidden bg-white shadow-md">
         <ol class="flex flex-col space-y-4 p-4">
-            <li><a href="{{ route('men') }}" class="text-gray-700 hover:text-gray-900 font-medium">Hombre</a></li>
-            <li><a href="{{ route('women') }}" class="text-gray-700 hover:text-gray-900 font-medium">Mujer</a></li>
-            <li><a href="{{ route('kids') }}" class="text-gray-700 hover:text-gray-900 font-medium">Niños</a></li>
-            <li><a href="{{ route('offers') }}" class="text-gray-700 hover:text-gray-900 font-medium">Ofertas</a></li>
+            <li><a class="text-gray-700 hover:text-gray-900 font-medium">Hombre</a></li>
+            <li><a class="text-gray-700 hover:text-gray-900 font-medium">Mujer</a></li>
+            <li><a class="text-gray-700 hover:text-gray-900 font-medium">Niños</a></li>
+            <li><a class="text-gray-700 hover:text-gray-900 font-medium">Ofertas</a></li>
         </ol>
     </div>
 </header>
