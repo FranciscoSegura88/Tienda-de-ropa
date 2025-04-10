@@ -2,7 +2,7 @@
     <div class="container mx-auto flex items-center justify-between p-4">
         <!-- Logo -->
         <a href="{{ route('main') }}">
-          <img src="logo.svg" alt="Icono" class="h-30 w-auto">
+            <img src="logo.svg" alt="Icono" class="h-30 w-auto">
         </a>
         <!--Header-->
         <nav class="hidden md:flex space-x-6">
@@ -13,6 +13,11 @@
                 <li><a id="btn_ofertas" class="text-gray-700 hover:text-gray-900 font-medium">Ofertas</a></li>
             </ol>
         </nav>
+
+        <div class="flex justify-center p-4">
+            <input type="text" id="buscador" placeholder="Buscar productos..."
+                class="border border-gray-300 rounded-lg px-6 py-4 w-50">
+        </div>
 
         <button id="menu-toggle" class="md:hidden p-2 focus:outline-none">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">

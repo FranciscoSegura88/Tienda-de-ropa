@@ -13,8 +13,6 @@
     <body class="flex flex-col min-h-screen">
         @include('partials.header')
 
-        @include('partials.subheader')
-
         <main class="flex-grow">
             @yield('content')
         </main>
