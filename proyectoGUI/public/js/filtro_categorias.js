@@ -1,83 +1,64 @@
-let btn_hombre = document.getElementById('btn_hombre');
-let btn_mujer = document.getElementById('btn_mujer');
-let btn_ninos = document.getElementById('btn_ninos');
-let btn_ofertas = document.getElementById('btn_ofertas');
+document.addEventListener('DOMContentLoaded', function() {
+  // Elementos del DOM
+  const btnHombre = document.getElementById('btn_hombre');
+  const btnMujer = document.getElementById('btn_mujer');
+  const btnNinos = document.getElementById('btn_ninos');
+  const btnOfertas = document.getElementById('btn_ofertas');
+  const cards = document.getElementsByClassName('card');
+  const subcategorias = document.querySelectorAll('.subcategoria');
+  const buscador = document.getElementById('buscador');
 
-let cards = document.getElementsByClassName('card'); //Obtengo todos los items
-
-btn_hombre.addEventListener('click', function(){
-  for(let i = 0; i < cards.length; i++){ //Recorro todos los items
-    if(cards[i].classList.contains('hidden')){ //Si el item esta oculto
-      cards[i].classList.remove('hidden'); //Lo muestro
-    }
+  // Función para filtrar por categoría
+  function filtrarPorCategoria(categoria) {
+      Array.from(cards).forEach(card => {
+          const mostrar = card.classList.contains(categoria);
+          card.classList.toggle('hidden', !mostrar);
+      });
   }
-  for(let i = 0; i < cards.length; i++){ //Recorro todos los items
-    if(!cards[i].classList.contains('hombre')){ //Si el item no es de la categoria hombre
-      cards[i].classList.add('hidden'); //Lo oculto
-    }
+
+  // Event listeners para botones de categoría
+  btnHombre.addEventListener('click', () => filtrarPorCategoria('hombre'));
+  btnMujer.addEventListener('click', () => filtrarPorCategoria('mujer'));
+  btnNinos.addEventListener('click', () => filtrarPorCategoria('ninos'));
+  btnOfertas.addEventListener('click', () => filtrarPorCategoria('trend'));
+
+  // Filtrado por subcategorías
+  subcategorias.forEach(sub => {
+      sub.addEventListener('change', function() {
+          const subSeleccionadas = Array.from(subcategorias)
+              .filter(s => s.checked)
+              .map(s => s.dataset.sub);
+
+          Array.from(cards).forEach(card => {
+              const mostrar = subSeleccionadas.length === 0 ||
+                  subSeleccionadas.some(sub => card.classList.contains(sub));
+              card.classList.toggle('hidden', !mostrar);
+          });
+      });
+  });
+
+  // Búsqueda
+  buscador.addEventListener('input', function() {
+      const texto = this.value.toLowerCase();
+
+      Array.from(cards).forEach(card => {
+          const nombre = card.dataset.nombre;
+          const descripcion = card.dataset.descripcion;
+          const mostrar = texto === '' ||
+              nombre.includes(texto) ||
+              descripcion.includes(texto);
+
+          card.classList.toggle('hidden', !mostrar);
+      });
+  });
+
+  // Menú móvil
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  if (menuToggle && mobileMenu) {
+      menuToggle.addEventListener('click', function() {
+          mobileMenu.classList.toggle('hidden');
+      });
   }
 });
-
-btn_mujer.addEventListener('click', function(){
-  for(let i = 0; i < cards.length; i++){ //Lo mismo
-    if(cards[i].classList.contains('hidden')){
-      cards[i].classList.remove('hidden');
-    }
-  }
-
-  for(let i = 0; i < cards.length; i++){
-    if(!cards[i].classList.contains('mujer')){
-      cards[i].classList.add('hidden');
-    }
-  }
-});
-
-btn_ninos.addEventListener('click', function(){
-  for(let i = 0; i < cards.length; i++){
-    if(cards[i].classList.contains('hidden')){
-      cards[i].classList.remove('hidden');
-    }
-  }
-
-  for(let i = 0; i < cards.length; i++){
-    if(!cards[i].classList.contains('ninos')){
-      cards[i].classList.add('hidden');
-    }
-  }
-});
-
-btn_ofertas.addEventListener('click', function(){
-  for(let i = 0; i < cards.length; i++){
-    if(cards[i].classList.contains('hidden')){
-      cards[i].classList.remove('hidden');
-    }
-  }
-
-  for(let i = 0; i < cards.length; i++){
-    if(!cards[i].classList.contains('trend')){
-      cards[i].classList.add('hidden');
-    }
-  }
-});
-
-const buscador = document.getElementById('buscador');
-
-buscador.addEventListener('input', function() {
-    buscarProductos(this.value.toLowerCase());
-});
-
-function buscarProductos(texto) {
-    const cards = document.getElementsByClassName('card');
-
-    for (let i = 0; i < cards.length; i++) {
-        const card = cards[i];
-        const titulo = card.querySelector('h3').textContent.toLowerCase();
-        const descripcion = card.querySelector('p').textContent.toLowerCase();
-
-        if (texto === '' || titulo.includes(texto) || descripcion.includes(texto)) {
-            card.classList.remove('hidden');
-        } else {
-            card.classList.add('hidden');
-        }
-    }
-}

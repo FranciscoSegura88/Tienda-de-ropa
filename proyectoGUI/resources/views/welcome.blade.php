@@ -20,5 +20,5 @@
         @include('partials.footer')
     </body>
 
-    <script src="/filtro_categorias.js"></script>
+    <script src="js/filtro_categorias.js"></script>
 </html>
